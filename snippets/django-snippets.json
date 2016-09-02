@@ -8,6 +8,13 @@
             "{% endcomment %}"
         ]
     },
+    "tag": {
+        "prefix": "tag",
+        "description": "tag",
+        "body": [
+            "{% $1 %}"
+        ]
+    },
     "CSRF": {
         "prefix": "csrf",
         "description": "CSRF token",
@@ -83,28 +90,28 @@
         ]
     },
     "Template Block": {
-		"prefix": "block",
-		"description": "Creates a block",
-		"body": [
-			"{% block $1 %}",
+        "prefix": "block",
+        "description": "Creates a block",
+        "body": [
+            "{% block $1 %}",
             "$2",
-			"{% endblock $1 %}"
-		]
-	},
+            "{% endblock $1 %}"
+        ]
+    },
     "URL": {
-		"prefix": "url",
-		"description": "URL tag",
-		"body": [
-			"{% url '${some-url-name}' ${arg} %}"
-		]
-	},
+        "prefix": "url",
+        "description": "URL tag",
+        "body": [
+            "{% url '${some-url-name}' ${arg} %}"
+        ]
+    },
     "With": {
-		"prefix": "with",
-		"description": "With block",
-		"body": [
-			"{% with ${local_var}=${context_var} %}",
+        "prefix": "with",
+        "description": "With block",
+        "body": [
+            "{% with ${local_var}=${context_var} %}",
             "$1",
             "{% endwith %}"
-		]
-	}
+        ]
+    }
 }

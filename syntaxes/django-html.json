@@ -1,14 +1,14 @@
 {
-    "name": "django-html",
-    "scopeName": "text.html.django",
-    "comment": "Django Template Engine",
-    "fileTypes": [
-        "html"
-    ],
-    "firstLineMatch": "^{% extends [\"'][^\"']+[\"'] %}",
-    "foldingStartMarker": "(<(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|{%\\s*(block|filter|for|if|macro|raw))",
-    "foldingStopMarker": "(<\/(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|{%\\s*(endblock|endfilter|endfor|endif|endmacro|endraw)\\s*%})",
-    "patterns": [
+	"name": "django-html",
+	"scopeName": "text.html.django",
+	"comment": "Django Template Engine",
+	"fileTypes": [
+		"html"
+	],
+	"firstLineMatch": "^{% extends [\"'][^\"']+[\"'] %}",
+	"foldingStartMarker": "(<(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|{%\\s*(block|filter|for|if|macro|raw))",
+	"foldingStopMarker": "(<\/(?i:(head|table|tr|div|style|script|ul|ol|form|dl))\\b.*?>|{%\\s*(endblock|endfilter|endfor|endif|endmacro|endraw)\\s*%})",
+	"patterns": [
 		{
 			"begin": "{#",
 			"captures": [
@@ -17,6 +17,16 @@
 				}
 			],
 			"end": "#}",
+			"name": "comment.line.django"
+		},
+		{
+			"begin": "{% comment %}",
+			"captures": [
+				{
+					"name": "entity.other.django.delimiter.comment"
+				}
+			],
+			"end": "{% endcomment %}",
 			"name": "comment.block.django"
 		},
 		{
@@ -49,10 +59,10 @@
 				}
 			]
 		},
-        {
-            "include": "text.html.basic"
-        }
-    ],
+		{
+			"include": "text.html.basic"
+		}
+	],
 	"repository": {
 		"escaped_char": {
 			"match": "\\\\x[0-9A-F]{2}",
